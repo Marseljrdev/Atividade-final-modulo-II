@@ -22,7 +22,7 @@ nome.addEventListener('keyup', () => {
     }
 });
 
-
+//verifica se o email digitado é menor do que 8
 email.addEventListener('keyup', () => {
     if(email.value.length < 8){
         emailKey.setAttribute('style', 'border: 2px solid red');
@@ -33,6 +33,7 @@ email.addEventListener('keyup', () => {
     }
 });
 
+//verifica se a senha digitado é menor do que 6
 senha.addEventListener('keyup', () => {
     if(senha.value.length < 6){
         senhaKey.setAttribute('style', 'border: 2px solid red');
@@ -43,7 +44,7 @@ senha.addEventListener('keyup', () => {
     }
 });
 
-
+//Funçao para cadastrar um cliente no sistema
 function register(){
     if(validNome && validEmail && validSenha){
 
