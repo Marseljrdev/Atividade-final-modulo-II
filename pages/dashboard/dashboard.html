@@ -30,6 +30,100 @@
 
       </tbody>
     </table>
+    <footer>
+      <button type="submit" id="btn-sub" onclick="sair()" >Sair</button>
+    </footer>
+
+        <!-- Modal -->
+        <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Confirmar exclusão de dados?
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              Ao apagar os dados, os mesmos serão excluidos do sistema.
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                id="removeItem"
+              >
+                Sim
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+                id="cancelButton"
+              >
+                Não
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+          <!-- Toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div
+          id="liveToast"
+          class="toast"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header">
+            <strong class="me-auto">Sucesso</strong>
+            <small>Agora</small>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body">Exclusão dos dados confirmada</div>
+        </div>
+      </div>
+  
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div
+          id="liveToastCancel"
+          class="toast"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header">
+            <strong class="me-auto">Cancelada</strong>
+            <small>Agora</small>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body">Exclusão dos dados NÃO confirmada</div>
+        </div>
+      </div>
 
     <script src="./dashboard.js"></script>
     <script src="../../assets/js/bootstrap.js"></script>
