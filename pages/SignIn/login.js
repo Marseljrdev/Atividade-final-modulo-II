@@ -1,41 +1,49 @@
 
-
+//Função para acessar a aplicação com o email e senha cadastrados
 function acessar(){
+    let email = document.querySelector('#email');
 
-    let email = document.getElementById('email');
-    let senha = document.getElementById('password');
+    let senha = document.querySelector('#password');
 
     let listaUser = [];
 
     let userValid = {
         email: '',
         senha: ''
-    }
+    };
     
     listaUser = JSON.parse(localStorage.getItem('listaUser'));
-    console.log(listaUser);
-    
-    listaUser.forEach(element => {
-        if(email.value === element.emailUser && senha.value === element.senhaUser){
+
+
+    listaUser.forEach((item) => {
+        if(email.value === item.emailUser && senha.value === item.senhaUser){
             userValid = {
-                nome: element.nomeUser,
-                email: element.emailUser,
-                senha: element.senhaUser
-            }
+                nome: item.nomeUser,
+                email: item.emailUser,
+                senha: item.senhaUser
+            };
         }
     });
 
-    if(email.value == userValid.email && senha.value == userValid.senha){
-        window.location.href="../dashboard/dashboard.html";
+    if(email.value === userValid.email && senha.value === userValid.senha){
+        window.location.href='../Dashboard/dashboard.html';
 
+        //criando token unico para cada usuario ao acessar o sistema e através dele posso fazer o usuario ser deslogado
         let token = Math.random().toString(14).substring(2) + Math.random().toString(14).substring(2);
         localStorage.setItem('token', token);
 
-        localStorage.setItem('userLoagado', userValid);
+        localStorage.setItem('userLogado', JSON.stringify(userValid)); 
+        
     }else{
-        console.log('Email ou senha incorretos');
+        alert('Email e senha incorretos');
     }
-};
+    
+    
+    
+}
+ 
+
+    
 
 
 
